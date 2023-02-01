@@ -120,7 +120,7 @@
                                     <div class="{{$loop->first ? 'col-md-12 m-0':' col-md-6'}}">
                                         <div class="position-relative post-preview card">
                                             @if($post->hasImage())
-                                                <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="card-img-top">
+                                                <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" @if($loop->first) height="450" @endif style="object-fit: cover" class="card-img-top">
                                             @endif
                                             <div class="position-absolute bottom-0 end-0 start-0 card-body bg-dark bg-opacity-50 d-flex flex-column justify-content-center text-center">
                                                 <h3 class="card-title {{$loop->first ? '':'fs-5 text-center'}}">
