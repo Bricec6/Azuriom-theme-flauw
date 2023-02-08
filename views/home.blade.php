@@ -91,7 +91,7 @@
                     </div>
                     @if(!theme_config('block.discord.toggle'))
                     <div class="text-center mx-2">
-                        <h2 class="fs-3 mb-3">{{ mb_strtoupper(trans('theme::admin.discord')) }}</h2>
+                        <h2 class="fs-3 mb-3 text-uppercase">{{trans('theme::admin.discord')}}</h2>
                         <div class="bg-dark rounded-3" style="border-radius: 12px;">
                             @include('components.general.discord')
                         </div>
@@ -100,7 +100,7 @@
                     @endif
                     @if(!theme_config('block.twitter.toggle'))
                     <div class="text-center mx-2">
-                        <h2 class="fs-3">{{ mb_strtoupper(trans('theme::admin.twitter')) }}</h2>
+                        <h2 class="fs-3 text-uppercase">{{trans('theme::admin.twitter')}}</h2>
                         <div>
                             @include('components.general.twitter', ['limit' => theme_config('block.twitter.amount') ?? 3, 'theme' => theme_config('block.twitter.theme') ?? 'white'])
                         </div>
@@ -111,7 +111,7 @@
                 <div class="col-md-9 p-0">
                     @if(! $posts->isEmpty())
                         <div class="bg-dark text-center py-3 border-bottom-0 rounded-end">
-                            <h2 class="m-0 text-white">{{ mb_strtoupper(trans('messages.news')) }}</h2>
+                            <h2 class="m-0 text-white text-uppercase">{{trans('messages.news')}}</h2>
                         </div>
 
                         <div class="bg-dark bg-opacity-10 p-md-4">
