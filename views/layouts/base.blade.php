@@ -75,8 +75,8 @@
             --bs-body-color: var(--bs-white);
 
             /*  custom color by client  */
-            --primary-btn: {{hexToRGB(theme_config('general.color.textbtnprimary'))}};
-            --secondary-btn: {{hexToRGB(theme_config('general.color.textbtnsecondary'))}};
+            --primary-btn: {{hexToRGB(theme_config('general.color.textbtnprimary') ?? 'var(--bs-white)')}};
+            --secondary-btn: {{hexToRGB(theme_config('general.color.textbtnsecondary') ?? 'var(--bs-white)')}};
 
         }
         .btn-primary,.btn-primary i,.btn-primary i:hover,.btn-primary:hover,.btn-primary:active,.btn-primary:focus{
