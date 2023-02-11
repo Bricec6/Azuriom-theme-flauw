@@ -166,7 +166,7 @@
             let elm = document.querySelector(".ip_address");
             elm.innerHTML = '{{mb_strtoupper(trans('theme::theme.hero.ip_copy'))}}';
             setTimeout(function () {
-                elm.innerHTML = '{{theme_config('hero.ip') ?? 'play.dixept.fr'}}';
+                elm.innerHTML = '{{theme_config('hero.server.ip') ?? 'play.dixept.fr'}}';
             }, 1500);
         });
     </script>
