@@ -17,6 +17,13 @@
 </fieldset>
 <fieldset class="d-flex flex-column gap-3 border p-2 w-100">
     <legend class="float-none w-auto p-2 py-0 bg-dark text-white text-lg">{{trans('theme::admin.middle')}}</legend>
+    <div class=" w-100">
+        <label class="form-label m-0" for="footer-middle-title">{{trans('theme::admin.title')}}</label>
+        <input type="text" class="form-control @error('footer-middle-title') is-invalid @enderror" title="footer-middle-title" name="footer[middle][title]" value="{{old('footer-middle-title', config('theme.footer.middle.title'))}}" aria-describedby="footer-middle-title-Label">
+        @error('footer-middle-title')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
     <div id="addFooterLink">
         @if(null != config('theme.footer.center.link'))
             @foreach(config('theme.footer.center.link') as $key=>$link)
