@@ -21,7 +21,7 @@
             @csrf
             <div class="card bg-secondary bg-opacity-10">
                 <div class="card-header bg-secondary bg-opacity-25">
-                    <h2 class="fw-bold fs-3 m-0">{{mb_strtoupper(trans('theme::admin.colors'))}}</h2>
+                    <h2 class="fw-bold fs-3 m-0 text-uppercase">{{trans('theme::admin.colors')}}</h2>
                     <small class="fs-5 fst-italic"><i class="bi bi-info-circle"></i> {{trans('theme::admin.form.colors.desc')}}</small>
                 </div>
                 <div class="card-body d-flex flex-column flex-md-row gap-3">
@@ -30,7 +30,7 @@
             </div>
             <div class="card bg-secondary bg-opacity-10">
                 <div class="card-header bg-secondary bg-opacity-25">
-                    <h2 class="fw-bold fs-3 m-0">{{mb_strtoupper(trans('theme::admin.hero'))}}</h2>
+                    <h2 class="fw-bold fs-3 m-0 text-uppercase">{{trans('theme::admin.hero')}}</h2>
                 </div>
                 <div class="card-body d-flex flex-column flex-md-row gap-3">
                     @include('admin.hero')
@@ -46,7 +46,7 @@
             </div>
             <div class="card bg-secondary bg-opacity-10">
                 <div class="card-header bg-secondary bg-opacity-25">
-                    <h2 class="fw-bold fs-3 m-0">{{mb_strtoupper(trans('theme::admin.body'))}}</h2>
+                    <h2 class="fw-bold fs-3 m-0 text-uppercase">{{trans('theme::admin.body')}}</h2>
                 </div>
                 <div class="card-body d-flex flex-column flex-md-row gap-3">
                     @include('admin.block')
@@ -54,7 +54,7 @@
             </div>
             <div class="card bg-secondary bg-opacity-10">
                 <div class="card-header bg-secondary bg-opacity-25">
-                    <h2 class="fw-bold fs-3 m-0">{{mb_strtoupper(trans('theme::admin.footer'))}}</h2>
+                    <h2 class="fw-bold fs-3 m-0 text-uppercase">{{trans('theme::admin.footer')}}</h2>
                 </div>
                 <div class="card-body d-flex flex-column flex-md-row gap-3">
                     @include('admin.footer')
@@ -69,6 +69,7 @@
     </div>
     @includeIf('admin.autre.donation')
 @endsection
+
 @push('styles')
     <style>
         /*Jennifer Louie*/
