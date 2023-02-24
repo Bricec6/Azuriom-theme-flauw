@@ -68,10 +68,12 @@
                 @include('elements.notifications')
 
                 <li class="nav-item dropdown">
-                    <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="userDropdown" class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        @if(!theme_config('userBar.avatar.toggle'))
+                            @if(game()->name() === 'Minecraft') <img src="{{Auth::user()->getAvatar(26)}}" width="26" alt="Avatar de {{ Auth::user()->name }}"> @endif
+                        @endif
                         {{ Auth::user()->name }}
                     </a>
-
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="{{ route('profile.index') }}">
                             {{ trans('messages.nav.profile') }}

@@ -17,6 +17,7 @@ return [
     'discord' => 'Discord',
     'twitter' => 'Twitter',
     'server' => 'Server',
+    'userBar' => 'User bar',
     'hero' => 'Hero',
     'show' => 'Show',
     'add' => 'Add',

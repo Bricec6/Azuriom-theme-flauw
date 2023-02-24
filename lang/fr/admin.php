@@ -16,6 +16,7 @@ return [
     'discord' => 'Discord',
     'twitter' => 'Twitter',
     'server' => 'Serveur',
+    'userBar' => 'Barre Utilisateur',
     'hero' => 'Hero',
     'show' => 'Afficher',
     'add' => 'Ajouter',
