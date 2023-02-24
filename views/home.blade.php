@@ -72,7 +72,7 @@
                             <i class="{{theme_config('event.box.icon') ?? 'bi bi-info-circle'}} fs-2"></i>
                         </div>
                         <div class="d-flex flex-column text-md-start text-center py-3">
-                            <h2 class="m-0 fw-bold fs-4">{{theme_config('event.box.text') ?? 'ÉVENEMENT:'}}</h2>
+                            <h2 class="m-0 fw-bold fs-4">{{theme_config('event.box.title') ?? 'ÉVENEMENT:'}}</h2>
                             <p class="m-0 px-4 mt-2">{{theme_config('event.box.paragraph') ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi deleniti distinctio dolor doloribus eos esse, maiores pariatur sint?'}}</p>
                             @if(theme_config('event.box.togglelink'))
                                 <div class="align-self-md-end align-self-center m-1 mx-3 mt-md-1 mt-4">
