@@ -98,10 +98,11 @@
 
     @yield('app')
 </div>
-
+@if(!theme_config('footer.box.toggle'))
 <footer class="bg-dark mt-auto py-4">
     @include('elements.footer')
 </footer>
+@endif
 
 @stack('footer-scripts')
 
