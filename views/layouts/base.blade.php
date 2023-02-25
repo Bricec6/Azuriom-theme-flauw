@@ -108,5 +108,12 @@
 
 @stack('footer-scripts')
 
+<script>
+        const serverCounter = document.querySelector('.server_count');
+        let serverCounterSpan = document.querySelector('.server_count_span')
+        const serverSpan = serverCounterSpan.innerText;
+        if(serverCounter.innerText.includes('{online}')){ serverCounterSpan.innerHTML = ""; serverCounter.innerText = serverCounter.innerText.replace('{online}', serverSpan) }
+</script>
+
 </body>
 </html>

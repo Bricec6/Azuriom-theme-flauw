@@ -34,6 +34,7 @@ return [
     'online' => 'En ligne',
     'join' => 'Rejoindre',
     'amount_to_show' => 'Montant à afficher',
+    'online_variable' => 'Utilisez {online} dans votre texte pour placer le nombre de connecté comme bon vous semble!',
     'form' => [
         'hero' => [
             'discord_show_online' => 'Configurez plus bas votre ID Discord afin d\'afficher le nombre de connecté',

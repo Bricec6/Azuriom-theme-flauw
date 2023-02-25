@@ -35,6 +35,7 @@ return [
     'online' => 'Online',
     'join' => 'Join',
     'amount_to_show' => 'Amount to show',
+    'online_variable' => 'Use {online} in your text to place the number of connections as you wish!',
     'form' => [
         'hero' => [
             'discord_show_online' => 'Set up your Discord ID below to display the number of connections you have.',

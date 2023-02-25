@@ -11,7 +11,6 @@
                 let discordList = document.querySelector('.discord-list');
             @endif
             let discordList_count = document.querySelectorAll('.discord-list_count');
-
             var init = {
                 method: 'GET',
                 mode: 'cors',
@@ -27,7 +26,7 @@
                 @endif
                 response.json().then(function (d) {
                     discordList_count.forEach(function(e) {
-                        e.prepend(d.presence_count);
+                        e.innerText.includes('{online}') ? e.innerText = e.innerText.replace('{online}', d.presence_count):e.prepend(d.presence_count);
                     });
                     @if(!$onlyCounter)
                         d.members.sort((a,b)=> (a.status>b.status)*2-1).forEach(function (m) {

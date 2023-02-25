@@ -30,6 +30,9 @@
             @enderror
         </div>
     </div>
+    <div>
+        <i>{{trans('theme::admin.online_variable')}}</i>
+    </div>
 </fieldset>
 <fieldset class="d-flex flex-column gap-3 border p-2 w-100">
     <legend class="float-none w-auto p-2 py-0 bg-dark text-white text-lg">{{trans('theme::admin.discord')}}</legend>
@@ -57,6 +60,7 @@
         </div>
     </div>
     <div>
-        <i>{{trans('theme::admin.form.hero.discord_show_online')}}</i>
+        <i>{{trans('theme::admin.online_variable')}}</i><br/>
+        <i class="fw-bold">{{trans('theme::admin.form.hero.discord_show_online')}}</i>
     </div>
 </fieldset>
