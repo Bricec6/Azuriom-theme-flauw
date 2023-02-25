@@ -69,7 +69,7 @@
             --bs-black-rgb: {{hexToRGB(theme_config('general.color.black')??'#000000')}};
 
             --bs-body-bg: rgba(var(--bs-body-bg-rgb), 1);
-            --bs-body-bg-rgb: {{hexToRGB(theme_config('general.color.body')??'#212529')}};
+            --bs-body-rgb: {{hexToRGB(theme_config('general.color.body')??'#212529')}};
 
             /* couleur txt */
             --bs-body-color: var(--bs-white);
