@@ -71,9 +71,8 @@
                         <div class="d-flex align-items-center justify-content-md-start justify-content-center bg-secondary bg-opacity-75 px-3 py-2">
                             <i class="{{theme_config('event.box.icon') ?? 'bi bi-info-circle'}} fs-2"></i>
                         </div>
-                        <div class="d-flex flex-column text-md-start text-center py-3">
-                            <h2 class="m-0 fw-bold fs-4">{{theme_config('event.box.title') ?? 'ÉVENEMENT:'}}</h2>
-                            <p class="m-0 px-4 mt-2">{{theme_config('event.box.paragraph') ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi deleniti distinctio dolor doloribus eos esse, maiores pariatur sint?'}}</p>
+                        <div class="d-flex flex-column text-md-start text-center py-3" style="word-wrap: break-word;">
+                            <h2 class="m-0 fw-bold fs-4">{{theme_config('event.box.title') ?? 'ÉVENEMENT:'}}</h2>{{theme_config('event.box.paragraph') ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi deleniti distinctio dolor doloribus eos esse, maiores pariatur sint?'}}
                             @if(theme_config('event.box.togglelink'))
                                 <div class="align-self-md-end align-self-center m-1 mx-3 mt-md-1 mt-4">
                                     <a class="btn btn-primary" href="{{theme_config('event.box.urllink') ?? 'https://dixept.fr'}}" target="_blank"><i class="{{theme_config('event.box.iconlink') ?? 'bi bi-discord'}}"></i> {{theme_config('event.box.textlink') ?? 'Discord'}}</a>
