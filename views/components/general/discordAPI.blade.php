@@ -26,7 +26,7 @@
                 @endif
                 response.json().then(function (d) {
                     discordList_count.forEach(function(e) {
-                        e.innerText.includes('{online}') ? e.innerText = e.innerText.replace('{online}', d.presence_count):e.prepend(d.presence_count);
+                        e.innerText.includes('{online}') ? e.innerText = e.innerText.replace('{online}', d.presence_count):'';
                     });
                     @if(!$onlyCounter)
                         d.members.sort((a,b)=> (a.status>b.status)*2-1).forEach(function (m) {
