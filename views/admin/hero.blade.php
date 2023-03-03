@@ -60,7 +60,7 @@
         </div>
     </div>
     <div>
-        <i>{{trans('theme::admin.online_variable')}}</i><br/>
+        <i>{{trans('theme::admin.online_variable')}}</i><strong class="{{theme_config('block.discord.type') == 'ifram' ? 'd-none':''}} text-info ms-1">{{trans('theme::admin.form.hero.discord_iframe')}}</strong><br/>
         <i class="fw-bold">{{trans('theme::admin.form.hero.discord_show_online')}}</i>
     </div>
 </fieldset>

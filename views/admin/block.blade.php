@@ -95,6 +95,37 @@
         <small class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></small>
         @enderror
     </div>
+    <div class="form-check p-0">
+        <div class="switcher">
+            <small class="fw-bold fs-5">{{trans('theme::admin.show')}}</small>
+            <label for="block-discord-type">
+                <select class="form-select @error('block-discord-type') is-invalid @enderror"  name="block[discord][type]" id="block-discord-type" onchange="discordTypeChange(this.value)">
+                    <option value="custom" @if(config('theme.block.discord.type') == 'custom') selected @endif>CUSTOM</option>
+                    <option value="iframe" @if(config('theme.block.discord.type') == 'iframe') selected @endif>IFRAME</option>
+                </select>
+            </label>
+        </div>
+        @error('block-discord-type')
+        <small class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></small>
+        @enderror
+    </div>
+    <div id="discord-iframe" class="{{theme_config('block.discord.type') == 'custom' ? 'd-none':''}}">
+        <div class="form-group">
+            <label for="block-discord-theme" class="form-label fw-bold m-0">{{trans('theme::admin.theme')}}</label>
+            <div class="d-flex align-center">
+                <select class="form-select"
+                        id="block-discord-theme"
+                        name="block[discord][theme]">
+                    <option value="light" @if(config('theme.block.discord.theme') == "light") selected @endif>{{trans('theme::admin.white')}}</option>
+                    <option value="dark" @if(config('theme.block.discord.theme') == "dark") selected @endif>{{trans('theme::admin.black')}}</option>
+
+                </select>
+            </div>
+            @error('block-discord-theme')
+            <small class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></small>
+            @enderror
+        </div>
+    </div>
     <div class=" w-100">
         <label class="form-label m-0" for="block-discord-id">ID {{trans('theme::admin.discord')}}</label>
         <input type="text" placeholder="1025845189115400303" class="form-control @error('block-discord-id') is-invalid @enderror" id="block-discord-id" name="block[discord][id]" value="{{old('block-discord-id', config('theme.block.discord.id'))}}" aria-describedby="block-discord-id-Label">
@@ -102,25 +133,27 @@
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror
     </div>
-    <div class=" w-100">
-        <label class="form-label m-0" for="block-discord-url">{{trans('theme::admin.url')}}</label>
-        <input type="url" placeholder="https://discord.gg/Gh2yBxUWvV" class="form-control @error('block-discord-url') is-invalid @enderror" id="block-discord-url" name="block[discord][url]" value="{{old('block-discord-url', config('theme.block.discord.url'))}}" aria-describedby="block-discord-url-Label">
-        @error('block-discord-url')
-        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-        @enderror
-    </div>
-    <div class=" w-100">
-        <label class="form-label m-0" for="block-discord-textonline">{{trans('theme::admin.text')}}</label>
-        <input type="text" placeholder="{{trans('theme::admin.online')}}" class="form-control @error('block-discord-textonline') is-invalid @enderror" id="block-discord-textonline" name="block[discord][textonline]" value="{{old('block-discord-textonline', config('theme.block.discord.textonline'))}}" aria-describedby="block-discord-textonline-Label">
-        @error('block-discord-textonline')
-        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-        @enderror
-    </div>
-    <div class=" w-100">
-        <label class="form-label m-0" for="block-discord-textjoin">{{trans('theme::admin.text')}}</label>
-        <input type="text" placeholder="{{trans('theme::admin.join')}}" class="form-control @error('block-discord-textjoin') is-invalid @enderror" id="block-discord-textjoin" name="block[discord][textjoin]" value="{{old('block-discord-textjoin', config('theme.block.discord.textjoin'))}}" aria-describedby="block-discord-textjoin-Label">
-        @error('block-discord-textjoin')
-        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-        @enderror
+    <div id="discord-custom" class="{{theme_config('block.discord.type') == 'iframe' ? 'd-none':''}}">
+        <div class=" w-100">
+            <label class="form-label m-0" for="block-discord-url">{{trans('theme::admin.url')}}</label>
+            <input type="url" placeholder="https://discord.gg/Gh2yBxUWvV" class="form-control @error('block-discord-url') is-invalid @enderror" id="block-discord-url" name="block[discord][url]" value="{{old('block-discord-url', config('theme.block.discord.url'))}}" aria-describedby="block-discord-url-Label">
+            @error('block-discord-url')
+            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
+        <div class=" w-100">
+            <label class="form-label m-0" for="block-discord-textonline">{{trans('theme::admin.text')}}</label>
+            <input type="text" placeholder="{{trans('theme::admin.online')}}" class="form-control @error('block-discord-textonline') is-invalid @enderror" id="block-discord-textonline" name="block[discord][textonline]" value="{{old('block-discord-textonline', config('theme.block.discord.textonline'))}}" aria-describedby="block-discord-textonline-Label">
+            @error('block-discord-textonline')
+            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
+        <div class=" w-100">
+            <label class="form-label m-0" for="block-discord-textjoin">{{trans('theme::admin.text')}}</label>
+            <input type="text" placeholder="{{trans('theme::admin.join')}}" class="form-control @error('block-discord-textjoin') is-invalid @enderror" id="block-discord-textjoin" name="block[discord][textjoin]" value="{{old('block-discord-textjoin', config('theme.block.discord.textjoin'))}}" aria-describedby="block-discord-textjoin-Label">
+            @error('block-discord-textjoin')
+            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
     </div>
 </fieldset>

@@ -124,3 +124,12 @@
         }
     </style>
 @endpush
+
+@push('scripts')
+    <script>
+        function discordTypeChange(value){
+            document.getElementById('discord-iframe').classList.toggle("d-none");
+            document.getElementById('discord-custom').classList.toggle("d-none");
+        }
+    </script>
+@endpush

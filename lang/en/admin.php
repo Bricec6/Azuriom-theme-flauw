@@ -39,6 +39,7 @@ return [
     'form' => [
         'hero' => [
             'discord_show_online' => 'Set up your Discord ID below to display the number of connections you have.',
+            'discord_iframe' => 'Sorry you can use {online} you use discord iframe settings.'
         ],
         'colors' => [
             'desc' => 'Put random colors to have more knowledge of the colors that change',

@@ -38,6 +38,7 @@ return [
     'form' => [
         'hero' => [
             'discord_show_online' => 'Configurez plus bas votre ID Discord afin d\'afficher le nombre de connecté',
+            'discord_iframe' => 'Désolé vous ne pouvez pas utiliser {online} vous utilisez les paramètres du discord iframe.'
         ],
         'colors' => [
             'desc' => 'Mettez des couleurs bien visible et aléatoire pour avoir plus connaissances des couleurs qui changent',

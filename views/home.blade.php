@@ -61,7 +61,7 @@
                         <div class="d-flex align-items-center justify-content-md-start justify-content-center bg-secondary bg-opacity-75 px-3 py-2">
                             <i class="{{theme_config('event.box.icon') ?? 'bi bi-info-circle'}} fs-2"></i>
                         </div>
-                        <div class="d-flex flex-column text-md-start text-center py-3" style="word-wrap: break-word;">
+                        <div class="d-flex flex-column text-md-start text-center py-3" style="overflow-wrap: anywhere;">
                             <h2 class="m-0 fw-bold fs-4">{{theme_config('event.box.title') ?? 'ÉVENEMENT:'}}</h2>{{theme_config('event.box.paragraph') ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi deleniti distinctio dolor doloribus eos esse, maiores pariatur sint?'}}
                             @if(theme_config('event.box.togglelink'))
                                 <div class="align-self-md-end align-self-center m-1 mx-3 mt-md-1 mt-4">
@@ -79,19 +79,25 @@
                         <a href="{{theme_config('block.button.url') ?? '/shop'}}" @if(theme_config('block.button.blank') && theme_config('block.button.blank') == 'on') target="_blank" @endif class="d-flex justify-content-center gap-1 btn btn-secondary px-3 py-2 fs-3 text-decoration-none rounded fw-bolder text-nowrap"><i class="d-none d-lg-block {{theme_config('block.button.icon') ?? 'bi bi-arrow-right'}}"></i> {{theme_config('block.button.text') ?? 'BOUTIQUE'}}</a>
                     </div>
                     @if(!theme_config('block.discord.toggle'))
-                    <div class="text-center mx-2">
-                        <h2 class="fs-3 mb-3 text-uppercase">{{trans('theme::admin.discord')}}</h2>
-                        <div class="bg-dark rounded-3" style="border-radius: 12px;">
-                            @include('components.general.discord')
-                        </div>
-                        <hr>
-                    </div>
+                        @if(theme_config('block.discord.type') == 'custom')
+                            <div class="text-center mx-2">
+                                <h2 class="fs-3 mb-3 text-uppercase">{{trans('theme::admin.discord')}}</h2>
+                                <div class="bg-dark rounded-3" style="border-radius: 12px;">
+                                    @include('components.general.discord')
+                                </div>
+                                <hr>
+                            </div>
+                        @else
+                            <div class="text-center mx-2 mb-2">
+                                <iframe height="400" width="100%" src="https://discordapp.com/widget?id={{theme_config('block.discord.id') ?? '1025845189115400303'}}&theme={{theme_config('block.discord.theme') ?? 'dark'}}"></iframe>
+                            </div>
+                        @endif
                     @endif
                     @if(!theme_config('block.twitter.toggle'))
                     <div class="text-center mx-2">
                         <h2 class="fs-3 text-uppercase">{{trans('theme::admin.twitter')}}</h2>
                         <div>
-                            @include('components.general.twitter', ['limit' => theme_config('block.twitter.amount') ?? 3, 'theme' => theme_config('block.twitter.theme') ?? 'white'])
+                            @include('components.general.twitter', ['limit' => theme_config('block.twitter.amount') ?? 3, 'theme' => theme_config('block.twitter.theme') ?? 'dark'])
                         </div>
                         <hr>
                     </div>
@@ -145,7 +151,9 @@
 @endsection
 
 @push('footer-scripts')
-    @include('components.general.discordAPI')
+    @if(theme_config('block.discord.type') == 'custom')
+        @include('components.general.discordAPI')
+    @endif
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
 
