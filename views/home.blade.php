@@ -106,7 +106,7 @@
                 <div class="col-md-9 p-0">
                     @if(! $posts->isEmpty())
                         <div class="bg-dark text-center py-3 border-bottom-0 rounded-end">
-                            <h2 class="m-0 text-white text-uppercase">{{trans('messages.news')}}</h2>
+                            <h2 class="m-0 text-white text-uppercase">{{theme_config('block.news.title') ?? trans('messages.news') }}</h2>
                         </div>
 
                         <div class="bg-dark bg-opacity-10 p-md-4">

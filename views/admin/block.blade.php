@@ -1,8 +1,18 @@
 <fieldset class="d-flex flex-column gap-3 border p-2 w-100">
+    <legend class="float-none w-auto p-2 py-0 bg-dark text-white text-lg">{{trans('theme::admin.news')}}</legend>
+    <div class=" w-100">
+        <label class="form-label m-0" for="block-news-title">{{trans('theme::admin.title')}}</label>
+        <input type="text" class="form-control @error('block-news-title') is-invalid @enderror" id="block-news-title" name="block[news][title]" value="{{old('block-news-title', config('theme.block.news.title'))}}" aria-describedby="block-news-title-Label">
+        @error('block-news-title')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
+</fieldset>
+<fieldset class="d-flex flex-column gap-3 border p-2 w-100">
     <legend class="float-none w-auto p-2 py-0 bg-dark text-white text-lg">{{trans('theme::admin.button')}}</legend>
     <div class=" w-100">
         <label class="form-label m-0" for="block-button-icon">{{trans('theme::admin.icon')}}</label>
-        <input type="icon" placeholder="bi bi-arrow-right" class="form-control @error('block-button-icon') is-invalid @enderror" id="block-button-icon" name="block[button][icon]" value="{{old('block-button-icon', config('theme.block.button.icon'))}}" aria-describedby="block-button-icon-Label">
+        <input type="text" placeholder="bi bi-arrow-right" class="form-control @error('block-button-icon') is-invalid @enderror" id="block-button-icon" name="block[button][icon]" value="{{old('block-button-icon', config('theme.block.button.icon'))}}" aria-describedby="block-button-icon-Label">
         @error('block-button-icon')
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
         @enderror

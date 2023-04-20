@@ -29,6 +29,7 @@ return [
     'middle' => 'Milieu',
     'left' => 'Gauche',
     'right' => 'Droite',
+    'news' => 'Nouveautés',
     'other_page' => 'Ouvrir dans un nouvel onglet',
     'ip_when_copied' => 'Texte quand l\'ip est copié',
     'online' => 'En ligne',
