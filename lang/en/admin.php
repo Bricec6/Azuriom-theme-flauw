@@ -50,7 +50,8 @@ return [
             'default_color' => 'Défault color',
         ],
         'footer' => [
-            'showing_serveurliste' => 'Do not display that your server is listed on serveurliste.com'
+            'showing_serveurliste' => 'Do not display that your server is listed on serveurliste.com',
+            'link_of_your_serveur_on_serveurliste' => 'Link to your Serveurliste page. <a href="https://serveurliste.com/faq" target="_blank">Documentation</a>'
         ],
     ],
     'config' => [

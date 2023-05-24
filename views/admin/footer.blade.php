@@ -65,13 +65,20 @@
         <div class=" w-100">
             <div class="switcher">
                 <small class="fw-bold fs-5">{{trans('theme::admin.form.footer.showing_serveurliste')}}</small>
-                <label for="footer-right-serveurliste">
-                    <input type="checkbox" id="footer-right-serveurliste" name="footer[right][serveurliste]" @if(config('theme.footer.right.serveurliste')) checked @endif @error('footer-right-serveurliste') is-invalid @enderror/>
+                <label for="footer-right-serveurliste-active">
+                    <input type="checkbox" id="footer-right-serveurliste-active" name="footer[right][serveurliste][active]" @if(config('theme.footer.right.serveurliste.active')) checked @endif @error('footer-right-serveurliste-active') is-invalid @enderror/>
                     <span><small></small></span>
                 </label>
             </div>
             @error('footer-right-serveurliste')
                 <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label class="form-label m-0" for="footer-right-serveurliste-link">{!! trans('theme::admin.form.footer.link_of_your_serveur_on_serveurliste')!!}</label>
+            <input type="text" class="form-control @error('footer-right-serveurliste-link') is-invalid @enderror" title="footer-right-serveurliste-link" name="footer[right][serveurliste][link]" value="{{old('footer-right-serveurliste-link', config('theme.footer.right.serveurliste.link'))}}" aria-describedby="footer-right-serveurliste-link-Label">
+            @error('footer-right-serveurliste-link')
+            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
             @enderror
         </div>
         <fieldset class="d-flex flex-column gap-3 border p-2 w-100">

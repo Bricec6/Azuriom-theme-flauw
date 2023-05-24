@@ -21,11 +21,11 @@
             </div>
             <div class="col-md-3 d-flex flex-column">
                 <h2 class="fs-4 text-white">{{theme_config('footer.right.title') ?? 'Nous soutenir'}}</h2>
-                <p class="text-white-50 @if(!theme_config('footer.right.serveurliste')) mb-1 @endif">
+                <p class="text-white-50 @if(!theme_config('footer.right.serveurliste.active')) mb-1 @endif">
                     {{theme_config('footer.right.paragraph') ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, neque?'}}
                 </p>
-                @if(!theme_config('footer.right.serveurliste'))
-                    <p class="text-white-50">Votez pour {{site_name()}} sur <a href="https://www.serveurliste.com">serveurliste.com</a></p>
+                @if(!theme_config('footer.right.serveurliste.active'))
+                    <p class="text-white-50">Votez pour {{site_name()}} sur <a href="@if(!theme_config('footer.right.serveurliste.link')) https://www.serveurliste.com @else {{theme_config('footer.right.serveurliste.link')}} @endif" target="_blank">serveurliste.com</a></p>
                 @endif
                 <div>
                     <a href="{{theme_config('footer.right.url') ?? '/shop'}}" class="btn btn-primary">{{theme_config('footer.right.text') ?? 'Boutique'}}</a>
