@@ -10,18 +10,23 @@
             <div class="col-md-3">
                 <h2 class="fs-4 text-white">{{theme_config('footer.middle.title') ?? 'Liens utiles'}}</h2>
                 <ul class="list-unstyled m-0 text-white-50">
-                    @if(theme_config('footer.center.link'))
+                    @if(theme_config('footer.center.link') != null)
                         @foreach(theme_config('footer.center.link') as $link)
                             <li class="py-1"><a class="text-white opacity-50 text-decoration-none" href="{{$link['url'] ?? '#'}}"><i class="{{$link['icon'] ?? 'bi bi-house'}} me-2"></i>{{$link['text'] ?? 'Accueil'}}</a></li>
                         @endforeach
+                    @else
+                        <li class="py-1"><a class="text-white opacity-50 text-decoration-none" href="https://www.serveurliste.com" target="_blank"><i class="bi bi-search me-2"></i>ServeurListe</a></li>
                     @endif
                 </ul>
             </div>
             <div class="col-md-3 d-flex flex-column">
                 <h2 class="fs-4 text-white">{{theme_config('footer.right.title') ?? 'Nous soutenir'}}</h2>
-                <p class="text-white-50">
+                <p class="text-white-50 @if(!theme_config('footer.right.serveurliste')) mb-1 @endif">
                     {{theme_config('footer.right.paragraph') ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, neque?'}}
                 </p>
+                @if(!theme_config('footer.right.serveurliste'))
+                    <p class="text-white-50">Votez pour {{site_name()}} sur <a href="https://www.serveurliste.com">serveurliste.com</a></p>
+                @endif
                 <div>
                     <a href="{{theme_config('footer.right.url') ?? '/shop'}}" class="btn btn-primary">{{theme_config('footer.right.text') ?? 'Boutique'}}</a>
                 </div>
@@ -41,8 +46,9 @@
                 @endforeach
             </ul>
         </div>
-        <div class="text-center text-white-50">
-            <p class="m-0">{{ setting('copyright') }} | <span title="Version {{$version_theme['version']}}">{{trans('theme::theme.footer.copyright')}} <a  href="https://discord.gg/Gh2yBxUWvV" target="_blank" rel="noopener noreferrer">Dixept</a>.</span> | @lang('messages.copyright') </p>
+        <div class="text-center text-white-50 mb-4">
+            @if(setting('copyright')) <p class="m-0">{{ setting('copyright') }}</p> @endif
+            <p class="m-0"><span title="Version {{$version_theme['version']}}">{{trans('theme::theme.footer.copyright')}} <a  href="https://discord.gg/Gh2yBxUWvV" target="_blank" rel="noopener noreferrer">Dixept</a></span> | @lang('messages.copyright') </p>
         </div>
     </div>
 </div>

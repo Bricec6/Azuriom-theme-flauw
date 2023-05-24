@@ -49,9 +49,13 @@ return [
         'color' => [
             'default_color' => 'Couleur par défaut',
         ],
+        'footer' => [
+            'showing_serveurliste' => 'Ne pas afficher que votre serveur est listé sur serveurliste.com'
+        ],
     ],
     'config' => [
         'our_discord' => 'Notre Discord',
+        'serveurliste' => 'Listez vos serveurs sur serveurliste.com',
         'don' => 'Faire un don',
         'donation' => 'Nous sommes honorés de votre soutien et nous apprécions grandement votre contribution généreuse, Dixept ❤ .',
     ],

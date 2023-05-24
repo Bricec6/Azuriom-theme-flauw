@@ -62,6 +62,18 @@
             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
             @enderror
         </div>
+        <div class=" w-100">
+            <div class="switcher">
+                <small class="fw-bold fs-5">{{trans('theme::admin.form.footer.showing_serveurliste')}}</small>
+                <label for="footer-right-serveurliste">
+                    <input type="checkbox" id="footer-right-serveurliste" name="footer[right][serveurliste]" @if(config('theme.footer.right.serveurliste')) checked @endif @error('footer-right-serveurliste') is-invalid @enderror/>
+                    <span><small></small></span>
+                </label>
+            </div>
+            @error('footer-right-serveurliste')
+                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
         <fieldset class="d-flex flex-column gap-3 border p-2 w-100">
             <legend class="float-none w-auto p-2 py-0 bg-dark text-white text-lg">{{trans('theme::admin.button')}}</legend>
             <div class="form-group">
