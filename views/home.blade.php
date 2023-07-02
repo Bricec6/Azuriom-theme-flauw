@@ -109,16 +109,16 @@
                             <h2 class="m-0 text-white text-uppercase">{{theme_config('block.news.title') ?? trans('messages.news') }}</h2>
                         </div>
 
-                        <div class="bg-dark bg-opacity-10 p-md-4">
+                        <div class="bg-dark bg-opacity-10 px-2 px-md-4 p-4">
                             <div class="row gy-3 m-0">
                                 @foreach($posts as $post)
-                                    <div class="{{$loop->first ? 'col-md-12 m-0':' col-md-6'}}" @if(!$loop->first) style="height: 300px;" @endif>
+                                    <div class="{{$loop->first ? 'col-md-12 m-0':' col-md-6'}}">
                                         <div class="post-preview card h-100">
                                             @if($post->hasImage())
-                                                <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" @if($loop->first) height="450" @endif style="object-fit: cover" class="card-img-top h-100">
+                                                <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" @if($loop->first) height="450" @else height="300" @endif style="object-fit: cover" class="card-img-top">
                                             @endif
-                                            <div class="position-absolute bottom-0 end-0 start-0 card-body bg-dark bg-opacity-50 d-flex flex-column justify-content-center text-center">
-                                                <h3 class="card-title {{$loop->first ? '':'fs-5 text-center'}}">
+                                            <div class=" card-body bg-dark bg-opacity-50 d-flex flex-column justify-content-center text-center">
+                                                <h3 class="card-title @if(!$post->hasImage()) py-4 @endif mb-0 {{$loop->first ? '':'fs-5 text-center py-0'}}">
                                                     <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></h3>
                                                 <p class="{{$loop->first ? '':'d-none'}} card-text text-white-50 text-clip">{{ Str::limit(strip_tags($post->content), 250) }}</p>
                                                 <div class="{{$loop->first ? '':'d-none'}}">
