@@ -52,8 +52,8 @@
                         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <ul class="list-unstyled">
-                                    <li>Chain: BSC(Binance Smart Chain) <bold class="fw-bold">BEP20</bold></li>
-                                    <li>Address: <bold class="fw-bold">0x4ad20de345436773b81ddedaf7d7753d8c67e955</bold></li>
+                                    <li>Chain: Bitcoin <bold class="fw-bold">BTC</bold></li>
+                                    <li>Address: <bold class="fw-bold">1JsXb3DwhLpoPBYF1aBziixszMYoZEizny</bold></li>
                                 </ul>
                             </div>
                         </div>
@@ -71,8 +71,7 @@
                             <div class="accordion-body">
                                 <ul class="list-unstyled">
                                     <li>Chain: ETH(Ethereum) <bold class="fw-bold">ERC20</bold></li>
-                                    <li>Address: <bold class="fw-bold">0x4ad20de345436773b81ddedaf7d7753d8c67e955</bold></li>
-                                    <li><small>(yes its same BEP20/ERC20)</small></li>
+                                    <li>Address: <bold class="fw-bold">0xf4eed60cda46bf216ece1842987af8c98bd0f75b</bold></li>
                                 </ul>
                             </div>
                         </div>
