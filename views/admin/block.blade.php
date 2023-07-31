@@ -10,6 +10,18 @@
 </fieldset>
 <fieldset class="d-flex flex-column gap-3 border p-2 w-100">
     <legend class="float-none w-auto p-2 py-0 bg-dark text-white text-lg">{{trans('theme::admin.button')}}</legend>
+    <div class="form-check p-0">
+        <div class="switcher">
+            <small class="fw-bold fs-5">{{trans('theme::admin.dont_show')}}</small>
+            <label for="block-button-toggle">
+                <input type="checkbox" id="block-button-toggle" name="block[button][toggle]" @if(config('theme.block.button.toggle')) checked @endif @error('block-button-toggle') is-invalid @enderror/>
+                <span><small></small></span>
+            </label>
+        </div>
+        @error('block-twitter-toggle')
+        <small class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></small>
+        @enderror
+    </div>
     <div class=" w-100">
         <label class="form-label m-0" for="block-button-icon">{{trans('theme::admin.icon')}}</label>
         <input type="text" placeholder="bi bi-arrow-right" class="form-control @error('block-button-icon') is-invalid @enderror" id="block-button-icon" name="block[button][icon]" value="{{old('block-button-icon', config('theme.block.button.icon'))}}" aria-describedby="block-button-icon-Label">
