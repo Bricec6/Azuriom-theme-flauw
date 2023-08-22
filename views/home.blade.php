@@ -9,15 +9,17 @@
             <div data-clipboard-text="{{theme_config('hero.server.ip') ?? 'play.dixept.fr'}}" class="copy_ip hero-small-box d-flex align-items-center gap-3 bg-dark bg-opacity-25 p-3" style="cursor : pointer;">
                 <div>
                     <h2 class="m-0 fs-5 server_count">
-                        @forelse($servers->where('home_display') as $server)
-                            @if($server->isOnline())
-                                <span class="server_count_span">{{$server->getOnlinePlayers()}}</span> {{theme_config('hero.server.text') ?? 'PLAYERS ONLINE'}}
-                            @else
-                                SERVER OFFLINE
-                            @endif
-                        @empty
-                            SERVEUR OFFLINE
-                        @endforelse
+                        @if($servers->where('home_display')->count() > 1)
+                            @php($totalPlayers = 0)
+                            @foreach($servers->where('home_display') as $server)
+                                @php($totalPlayers += $server->getOnlinePlayers())
+                            @endforeach
+                        @endif
+                        @if($servers->where('home_display')->count() > 0)
+                            <span class="server_count_span">{{$totalPlayers??$server->getOnlinePlayers()}}</span> {{theme_config('hero.server.text') ?? 'PLAYERS ONLINE'}}
+                        @else
+                            SERVER OFFLINE
+                        @endif
                     </h2>
                     <div class="position-relative">
                         <p class="ip_address m-0">{{theme_config('hero.server.ip') ?? 'play.dixept.fr'}}</p>
