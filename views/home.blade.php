@@ -10,7 +10,7 @@
                 <div>
                     <h2 class="m-0 fs-5 server_count">
                         @if($servers->where('home_display')->count() > 1)
-                            @php($totalPlayers = 0)
+                                @php($totalPlayers = 0)
                             @foreach($servers->where('home_display') as $server)
                                 @php($totalPlayers += $server->getOnlinePlayers())
                             @endforeach
@@ -158,19 +158,6 @@
     @if(theme_config('block.discord.type') == 'custom')
         @include('components.general.discordAPI')
     @endif
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
-
-    <script>
-        var clipboard = new ClipboardJS('.copy_ip')
-        clipboard.on('success', function(e) {
-            let elm = document.querySelector(".ip_address");
-            elm.innerHTML = '{{mb_strtoupper(trans('theme::theme.hero.ip_copy'))}}';
-            setTimeout(function () {
-                elm.innerHTML = '{{theme_config('hero.server.ip') ?? 'play.dixept.fr'}}';
-            }, 1500);
-        });
-    </script>
 
     <script src="https://platform.twitter.com/widgets.js"></script>
 @endpush

@@ -13,11 +13,11 @@
                                 @php($totalPlayers += $server->getOnlinePlayers())
                             @endforeach
                         @endif
-                            @if($servers->where('home_display')->count() > 0)
-                                        <span class="server_count_span">{{$totalPlayers??$server->getOnlinePlayers()}}</span> {{theme_config('hero.server.text') ?? 'PLAYERS ONLINE'}}
-                            @else
-                                SERVER OFFLINE
-                            @endif
+                        @if($servers->where('home_display')->count() > 0)
+                            <span class="server_count_span">{{$totalPlayers??$server->getOnlinePlayers()}}</span> {{theme_config('hero.server.text') ?? 'PLAYERS ONLINE'}}
+                        @else
+                            SERVER OFFLINE
+                        @endif
                     </h2>
                     <div class="position-relative">
                         <p class="ip_address m-0">{{theme_config('hero.server.ip') ?? 'play.dixept.fr'}}</p>

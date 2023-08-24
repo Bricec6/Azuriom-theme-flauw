@@ -107,13 +107,23 @@
 </footer>
 
 @stack('footer-scripts')
-
-<script>
+<script type="text/javascript">
         const serverCounter = document.querySelector('.server_count');
         let serverCounterSpan = document.querySelector('.server_count_span')
         const serverSpan = serverCounterSpan.innerText;
         serverCounterSpan.innerHTML = ""
         if(serverCounter.innerText.includes('{online}')){serverCounter.innerText = serverCounter.innerText.replace('{online}', serverSpan) }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script type="text/javascript">
+    var clipboard = new ClipboardJS('.copy_ip')
+    clipboard.on('success', function(e) {
+        let elm = document.querySelector(".ip_address");
+        elm.innerHTML = '{{mb_strtoupper(trans('theme::theme.hero.ip_copy'))}}';
+        setTimeout(function () {
+            elm.innerHTML = '{{theme_config('hero.server.ip') ?? 'play.dixept.fr'}}';
+        }, 1500);
+    });
 </script>
 
 </body>
