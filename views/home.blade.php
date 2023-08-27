@@ -130,7 +130,7 @@
                                                 </div>
                                             </div>
                                             <div class="position-absolute top-0 card-header text-muted">
-                                                {{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => site_name()]) }}
+                                                {{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}
                                             </div>
                                         </div>
                                     </div>
