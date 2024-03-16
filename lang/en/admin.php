@@ -1,6 +1,5 @@
 <?php
 return [
-
     'none' => 'None',
     'title' => 'Title',
     'picture' => 'Image',
@@ -30,6 +29,7 @@ return [
     'middle' => 'Middle',
     'left' => 'Left',
     'right' => 'Right',
+	'news' => 'News',
     'other_page' => 'Open on other page',
     'ip_when_copied' => 'Text when ip are copied',
     'online' => 'Online',
@@ -47,7 +47,7 @@ return [
             'color_of_secondary_buttons' => 'Text color for secondary buttons',
         ],
         'color' => [
-            'default_color' => 'Défault color',
+            'default_color' => 'Default color',
         ],
         'footer' => [
             'showing_serveurliste' => 'Do not display that your server is listed on serveurliste.com',
@@ -58,6 +58,6 @@ return [
         'our_discord' => 'Our Discord',
         'serveurliste' => 'List your servers on serveurliste.com',
         'don' => 'Make a donation',
-        'donation' => 'We are honored by your support and greatly appreciate your generous contribution, Dixept ❤ .',
+        'donation' => 'We are honored by your support and greatly appreciate your generous contribution, Dixept ❤.',
     ],
 ];

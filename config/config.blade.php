@@ -1,5 +1,5 @@
 @extends('admin.layouts.admin')
-@section('title', 'Thème Flauw')
+@section('title', 'Theme Flauw')
 @php ($azuriomImages = \Azuriom\Models\Image::all())
 
 @section('content')
