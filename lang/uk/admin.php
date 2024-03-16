@@ -29,7 +29,7 @@ return [
     'middle' => 'Середній',
     'left' => 'Ліво',
     'right' => 'Право',
-	'news' => 'News',
+    'news' => 'News',
     'other_page' => 'Відкрити на іншій сторінці',
     'ip_when_copied' => 'Текст, коли айпі скопійовано',
     'online' => 'Онлайн',
