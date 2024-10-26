@@ -1,8 +1,9 @@
 @extends('layouts.base')
 
 @section('app')
-    <div class="home-background d-flex align-items-center justify-content-end flex-column text-white pb-md-15 pb-3" style="background: rgb(87,110,247);background: radial-gradient(circle, rgba(87,110,247,0) 6%, rgba(var(--bs-black-rgb),0.6) 98%),linear-gradient(rgba(18,23,37,0.79), rgba(var(--bs-light-rgb),0.8)),url('{{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}') no-repeat center; background-size: cover">
+    <div class="home-background d-flex align-items-center justify-content-end flex-column text-white pb-md-15 pb-3 @if(theme_config('hero.appHide.toggle')) appHide @endif" style="background: rgb(87,110,247);background: radial-gradient(circle, rgba(87,110,247,0) 6%, rgba(var(--bs-black-rgb),0.6) 98%),linear-gradient(rgba(18,23,37,0.79), rgba(var(--bs-light-rgb),0.8)),url('{{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}') no-repeat center; background-size: cover">
 
+        @if(!theme_config('hero.appHide.toggle'))
         <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-md-4">
             <div data-clipboard-text="{{theme_config('hero.server.ip') ?? 'play.dixept.fr'}}" class="copy_ip hero-small-box d-flex align-items-center gap-3 bg-dark bg-opacity-25 p-3" style="cursor : pointer;">
                 <div>
@@ -42,6 +43,7 @@
             </a>
 
         </div>
+            @endif
     </div>
     @push('footer-scripts')
         @include('components.general.discordAPI', ['onlyCounter' => true])

@@ -31,6 +31,7 @@ return [
     'right' => 'Right',
     'news' => 'News',
     'home' => 'Home',
+    'hide' => 'Cacher',
     'show_servers' => 'Show servers',
     'other_page' => 'Open on other page',
     'ip_when_copied' => 'Text when ip are copied',
@@ -38,6 +39,15 @@ return [
     'join' => 'Join',
     'amount_to_show' => 'Amount to show',
     'online_variable' => 'Use {online} in your text to place the number of connections as you wish!',
+    'active_premium' => 'Activate premium mode ⭐',
+    'link_of_your_server_on' => 'Link to your server on <a href="https://www.serveurliste.com/" target="_blank" rel="noopener, nofollow">ServeurListe.com</a>',
+    'font' => [
+        'title' => 'Custom Font',
+        'toggle' => 'Enable Custom Font',
+        'find_custom_font' => 'List of available fonts',
+        'link_of_font' => 'Font link',
+        'name_of_font' => 'Font name',
+    ],
     'form' => [
         'hero' => [
             'discord_show_online' => 'Set up your Discord ID below to display the number of connections you have.',
@@ -62,4 +72,5 @@ return [
         'don' => 'Make a donation',
         'donation' => 'We are honored by your support and greatly appreciate your generous contribution, Dixept ❤.',
     ],
+    'disableInfosHero' => 'Hide discord and server on pages other than home',
 ];

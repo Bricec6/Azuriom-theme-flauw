@@ -38,6 +38,15 @@ return [
     'join' => 'Rejoindre',
     'amount_to_show' => 'Montant à afficher',
     'online_variable' => 'Utilisez {online} dans votre texte pour placer le nombre de connecté comme bon vous semble!',
+    'active_premium' => 'Activez le mode premium ⭐',
+    'link_of_your_server_on' => 'Lien de votre serveur sur <a href="https://www.serveurliste.com/" target="_blank" rel="noopener, nofollow">ServeurListe.com</a>',
+    'font' => [
+        'title' => 'Police customisé',
+        'toggle' => 'Activer la police customisé',
+        'find_custom_font' => 'Liste des polices disponibles',
+        'link_of_font' => 'Lien de la police',
+        'name_of_font' => 'Nom de la police',
+    ],
     'form' => [
         'hero' => [
             'discord_show_online' => 'Configurez plus bas votre ID Discord afin d\'afficher le nombre de connecté',
@@ -62,4 +71,5 @@ return [
         'don' => 'Faire un don',
         'donation' => 'Nous sommes honorés de votre soutien et nous apprécions grandement votre contribution généreuse, Dixept ❤.',
     ],
+    'disableInfosHero' => 'Cacher le discord et le serveur sur les pages autres que l\'accueil',
 ];

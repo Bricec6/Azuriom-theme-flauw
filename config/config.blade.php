@@ -19,9 +19,25 @@
             <a href="{{ route('admin.images.create') }}" target="_blank" class="btn btn-secondary fw-bold rounded-4 text-uppercase px-3 my-1" style="font-size: 10px"><i class="bi bi-link"></i> Upload Image</a>
         </div>
     </div>
+
     <div>
         <form class="w-100" action="{{ route('admin.themes.config', $theme) }}" method="POST">
             @csrf
+
+            <div class="p-2 d-flex flex-column gap-3">
+                <div class="row container gap-md-3">
+                    <div class="col-lg-5 alert alert-warning">
+                        <p class=" mb-2">{{trans('theme::admin.active_premium')}}</p>
+                        @include('admin.components.forms.url', [
+                            'id' => 'general[serveurliste][link]',
+                            'name' => trans('theme::admin.link_of_your_server_on'),
+                            'placeholder' => "https://www.serveurliste.com/minecraft/your_server",
+                            'pattern' => '^https:\/\/www\.serveurliste\.com\/.*'
+                        ])
+                    </div>
+                </div>
+            </div>
+
             <div class="card bg-secondary bg-opacity-10">
                 <div class="card-header bg-secondary bg-opacity-25">
                     <h2 class="fw-bold fs-3 m-0 text-uppercase">{{trans('theme::admin.colors')}}</h2>

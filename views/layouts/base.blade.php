@@ -87,6 +87,14 @@
         }
     </style>
     @stack('styles')
+    <style>
+        @if( theme_config('general.font.toggle') && theme_config('general.serveurliste.link'))
+            @import url({{theme_config('general.font.url') ?? 'https://fonts.bunny.net/css?family=poppins:100,200,300,400,500,600,700,700i,800,900&display=swap'}});
+            .btn, h1, h2, h3, h4, h5, h6, .nav-link {
+            font-family: "{{theme_config('general.font.text') ?? 'Poppins'}}", sans-serif;
+            }
+        @endif
+    </style>
 </head>
 
 <body>
