@@ -7,6 +7,6 @@ return [
         'ip_copy' => 'Ip Copied!'
     ],
     'posts' => [
-        'add_news' => 'Le site ne possède aucun article'
+        'add_news' => 'The site does not have any articles'
     ],
 ];
