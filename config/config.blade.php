@@ -1,24 +1,33 @@
 @extends('admin.layouts.admin')
-@section('title', 'Theme Flauw')
-@php ($azuriomImages = \Azuriom\Models\Image::all())
+@php
+    // Get theme
+        $themes = collect(app(Azuriom\Extensions\UpdateManager::class)->getThemes(false));
+
+        $current_theme = $themes->where('extension_id', $theme)->first();
+
+@endphp
+@section('title', trans('theme::admin.config.title') .' '. $current_theme['name'])
+
+@php
+    $authors = ['Bricec6', 'Bryx Agency'];
+
+    // Get azuriom images
+        $azuriomImages = \Azuriom\Models\Image::all();
+
+    // Get themes
+        $themes_own = collect(app(Azuriom\Extensions\UpdateManager::class)->getThemes(false))->whereIn('author.name', $authors);
+
+    // Get plugins
+        $plugin_installed = plugins()->plugins();
+
+        $plugins_own = collect(app(Azuriom\Extensions\UpdateManager::class)->getPlugins(false))->whereIn('author.name', $authors);
+
+    // Get images
+        $azuriomImages = \Azuriom\Models\Image::all()
+@endphp
 
 @section('content')
-    <div class="col-12 mb-3 d-flex flex-column gap-2">
-        <div>
-            <a href="https://discord.gg/Gh2yBxUWvV" target="_blank" class="btn btn-primary fw-bold rounded-4 text-uppercase px-3"><i class="bi bi-discord"></i> {{trans('theme::admin.config.our_discord')}}</a>
-        </div>
-        <div>
-            <button type="button" class="btn btn-success fw-bold rounded-4 text-uppercase px-3" data-bs-toggle="modal" data-bs-target="#donationModal"><i class="bi bi-heart-fill me-1"></i>{{trans('theme::admin.config.don')}}</button>
-        </div>
-        <div>
-           <a href="https://www.serveurliste.com" target="_blank" class="btn btn-warning fw-bold rounded-4 text-uppercase px-3"><i class="bi bi-search me-1"></i>{{trans('theme::admin.config.serveurliste')}}</a>
-        </div>
-        <hr>
-        <div>
-            <a href="https://icons.getbootstrap.com/" target="_blank" class="btn btn-secondary fw-bold rounded-4 text-uppercase px-3 my-1" style="font-size: 10px"><i class="bi bi-bootstrap-fill"></i> BOOSTRAP ICON</a>
-            <a href="{{ route('admin.images.create') }}" target="_blank" class="btn btn-secondary fw-bold rounded-4 text-uppercase px-3 my-1" style="font-size: 10px"><i class="bi bi-link"></i> Upload Image</a>
-        </div>
-    </div>
+    @include('components.admin.partials.intro')
 
     <div>
         <form class="w-100" action="{{ route('admin.themes.config', $theme) }}" method="POST">
